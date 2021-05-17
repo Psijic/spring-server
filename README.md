@@ -23,8 +23,3 @@ curl -X POST -H "Content-Type: application/json" -d '{"id":"beff85af-488e-4df0-a
 ```
 
 `fill_db.sh` is to fill database with mock phones
-
-### P.S.
-The most interesting part was to plan the API.
-
-The most cumbersome part is trying to use Fonoapi while it is unavailable at least 4 months according to their readme. So, I made a mock phones DB already included. 
