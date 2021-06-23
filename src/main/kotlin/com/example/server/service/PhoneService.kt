@@ -14,6 +14,10 @@ class PhoneService(val db: PhoneRepository) {
         db.save(phone)
     }
 
+    fun isBooked(id: String): Boolean {
+        return db.checkIsBooked(id) != null
+    }
+
     fun book(id: String, name: String) {
         db.book(id, name, Date())
     }

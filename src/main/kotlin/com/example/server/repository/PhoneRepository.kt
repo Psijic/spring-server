@@ -18,6 +18,9 @@ interface PhoneRepository : CrudRepository<Phone, String> {
     @Query("SELECT * FROM phones WHERE booked_date IS NOT NULL")
     fun getAllUnavailable(): List<Phone>
 
+    @Query("SELECT * FROM phones p WHERE p.id = :id")
+    fun checkIsBooked(@Param("id") id: String): Phone?
+
     @Transactional
     @Modifying
     @Query("UPDATE phones p set booked_by =:name, booked_date =:date WHERE p.id = :id")
